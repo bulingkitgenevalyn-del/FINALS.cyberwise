@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<!--
+  CYBERWISE - Cybersecurity Awareness
+  Cristal e-College | ITEL 1 - Web Systems and Technologies | Final Examination
+  Page 2 of 4: GUIDE (awareness, passwords, threats, privacy).
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guide - CYBERWISE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== HEADER / NAVIGATION ===== -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-icon">🛡️</span>
+      <div>
+        <h1>CYBERWISE</h1>
+        <small>Stay Smart. Stay Secure.</small>
+      </div>
+    </div>
+
+    <nav class="nav" aria-label="Main navigation">
+      <a class="nav-btn" href="index.html">🏠 Home</a>
+      <a class="nav-btn active" href="guide.html">📚 Guide</a>
+      <a class="nav-btn" href="play.html">🎮 Play</a>
+      <a class="nav-btn" href="about.html">ℹ️ About</a>
+    </nav>
+
+    <button id="soundToggle" class="icon-btn" title="Toggle sound">🔊</button>
+  </header>
+
+  <main>
+
+    <div class="subtabs" role="tablist" aria-label="Guide sections">
+      <button class="filter active" data-tab="learn" type="button">📚 Awareness</button>
+      <button class="filter" data-tab="passwords" type="button">🔑 Passwords</button>
+      <button class="filter" data-tab="threats" type="button">⚠️ Threats</button>
+      <button class="filter" data-tab="privacy" type="button">🕶️ Privacy</button>
+    </div>
+
+    <section id="learn" class="page active">
+      <div class="card">
+        <h2>📚 Cybersecurity Awareness</h2>
+        <p><b>Cybersecurity</b> means protecting your devices, accounts and personal information from people who want to steal, damage or misuse them. You do not need to be a computer expert. Good habits stop most attacks.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card mini"><h3>🔒 Confidentiality</h3><p>Only the right people can see your information.</p></div>
+        <div class="card mini"><h3>✅ Integrity</h3><p>Your information is not changed by someone else.</p></div>
+        <div class="card mini"><h3>🌐 Availability</h3><p>You can reach your accounts and files when you need them.</p></div>
+      </div>
+
+      <div class="card">
+        <h3>🎯 Why are students targeted?</h3>
+        <ul>
+          <li>Students use many accounts: school, email, social media, games.</li>
+          <li>Many reuse the same password everywhere.</li>
+          <li>Students trust links from friends, free offers and scholarship messages.</li>
+          <li>Hacked social accounts are used to scam your friends and family.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>⭐ 5 Golden Habits</h3>
+        <ol class="habits">
+          <li><b>Think before you click.</b> Check the sender and the link.</li>
+          <li><b>Use strong, different passwords</b> for important accounts.</li>
+          <li><b>Turn on two-factor authentication (2FA).</b></li>
+          <li><b>Update</b> your phone, apps and computer.</li>
+          <li><b>Share less.</b> Keep personal details private.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="passwords" class="page">
+      <div class="card">
+        <h2>🔑 Password Security Guide</h2>
+        <p>Test how strong a password is. It is checked only inside your browser. Nothing is sent or saved. Do not type your real password here. Try a similar one instead.</p>
+
+        <label for="pwInput" class="lbl">Try a password</label>
+        <div class="row">
+          <input type="password" id="pwInput" placeholder="Type a sample password" autocomplete="off">
+          <button id="pwShow" class="btn ghost" type="button">👁 Show</button>
+        </div>
+
+        <div class="meter"><div id="pwBar" class="meter-bar"></div></div>
+        <p class="meter-text"><b id="pwLabel">Type something to begin</b> <span id="pwCrack" class="muted"></span></p>
+
+        <ul id="pwChecks" class="checks">
+          <li data-check="length">At least 12 characters</li>
+          <li data-check="upper">Has an uppercase letter</li>
+          <li data-check="lower">Has a lowercase letter</li>
+          <li data-check="number">Has a number</li>
+          <li data-check="symbol">Has a symbol (! @ # $ ...)</li>
+          <li data-check="common">Not a common password or pattern</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>⚙️ Password Generator</h3>
+        <p>Make a random password or a passphrase.</p>
+        <div class="gen-row">
+          <label for="genLength">Length: <b id="genLenText">16</b></label>
+          <input type="range" id="genLength" min="8" max="32" value="16">
+        </div>
+        <div class="gen-row opts">
+          <label><input type="checkbox" id="optUpper" checked> ABC</label>
+          <label><input type="checkbox" id="optLower" checked> abc</label>
+          <label><input type="checkbox" id="optNumber" checked> 123</label>
+          <label><input type="checkbox" id="optSymbol" checked> #$%</label>
+        </div>
+        <div class="row">
+          <input type="text" id="genOutput" readonly placeholder="Your new password appears here">
+          <button id="genBtn" class="btn primary" type="button">Generate</button>
+          <button id="copyBtn" class="btn ghost" type="button">📋 Copy</button>
+        </div>
+        <p id="genMsg" class="error" role="alert"></p>
+      </div>
+
+      <div class="card">
+        <h3>✅ Password Do's and Don'ts</h3>
+        <div class="two-col">
+          <ul class="do">
+            <li>Use a long passphrase of 4 or more random words.</li>
+            <li>Use a different password for each important account.</li>
+            <li>Use a password manager to remember them.</li>
+            <li>Turn on 2FA, especially for email.</li>
+          </ul>
+          <ul class="dont">
+            <li>Do not use your name, birthday or "123456".</li>
+            <li>Do not reuse the same password everywhere.</li>
+            <li>Do not share passwords or OTP codes with anyone.</li>
+            <li>Do not write passwords on sticky notes near your desk.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="threats" class="page">
+      <div class="card">
+        <h2>⚠️ Common Cyber Threats</h2>
+        <p>Click a threat to see what it is, how to spot it and how to stay safe.</p>
+
+        <div class="row">
+          <input type="text" id="threatSearch" placeholder="Search e.g. phishing, wifi, ransomware" autocomplete="off">
+          <button id="threatClear" class="btn ghost" type="button">Clear</button>
+        </div>
+        <div class="filters">
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="scam">🎣 Scams</button>
+          <button class="filter" data-filter="malware">🦠 Malware</button>
+          <button class="filter" data-filter="account">🔓 Account and Network</button>
+        </div>
+        <p id="threatCount" class="muted"></p>
+        <div id="threatList" class="threat-list"></div>
+      </div>
+    </section>
+
+    <section id="privacy" class="page">
+      <div class="card">
+        <h2>🕶️ Online Privacy Tips</h2>
+        <p>Tick each tip after you do it. Your progress is saved in this browser.</p>
+
+        <div class="meter"><div id="privBar" class="meter-bar"></div></div>
+        <p class="meter-text"><b id="privText">0 of 0 done</b></p>
+
+        <div id="privList" class="priv-list"></div>
+        <button id="privReset" class="btn danger" type="button">Reset Checklist</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    CYBERWISE &copy; 2026 | Cristal e-College - Computer Studies Department | ITEL 1 Final Exam
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+  <script src="guide.js"></script>
+</body>
+</html>

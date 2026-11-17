@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--
+  CYBERWISE - Cybersecurity Awareness
+  Cristal e-College | ITEL 1 - Web Systems and Technologies | Final Examination
+  Page 1 of 4: HOME (name form, stats, tip of the moment).
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CYBERWISE - Stay Smart. Stay Secure.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== HEADER / NAVIGATION ===== -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-icon">🛡️</span>
+      <div>
+        <h1>CYBERWISE</h1>
+        <small>Stay Smart. Stay Secure.</small>
+      </div>
+    </div>
+
+    <nav class="nav" aria-label="Main navigation">
+      <a class="nav-btn active" href="index.html">🏠 Home</a>
+      <a class="nav-btn" href="guide.html">📚 Guide</a>
+      <a class="nav-btn" href="play.html">🎮 Play</a>
+      <a class="nav-btn" href="about.html">ℹ️ About</a>
+    </nav>
+
+    <button id="soundToggle" class="icon-btn" title="Toggle sound">🔊</button>
+  </header>
+
+  <main>
+
+    <section id="home" class="page active">
+      <div class="hero card">
+        <p class="tag"> CYBERSECURITY AWARENESS </p>
+        <h2>Hackers only need <span class="glow">one weak moment.</span><br>Do not give them one.</h2>
+        <p>
+          CYBERWISE teaches students how to protect their accounts and personal
+          information online. Learn the basics, check your password, spot scams,
+          then prove your skills in the quiz game.
+        </p>
+
+        <!-- Name form with validation -->
+        <form id="nameForm" class="name-form" novalidate>
+          <label for="playerName">Enter your player name to join the leaderboard</label>
+          <div class="row">
+            <input type="text" id="playerName" maxlength="15" placeholder="e.g. CyberHero" autocomplete="off">
+            <button type="submit" class="btn primary">Play Quiz ▶</button>
+          </div>
+          <p id="nameError" class="error" role="alert"></p>
+        </form>
+      </div>
+
+      <div class="grid-3">
+        <div class="card stat"><span id="statGames">0</span><small>Quiz Games Played</small></div>
+        <div class="card stat"><span id="statBest">0</span><small>Your Best Score</small></div>
+        <div class="card stat"><span id="statCorrect">0</span><small>Correct Answers</small></div>
+      </div>
+
+      <div class="grid-3 features">
+        <a class="card feature" href="guide.html#learn"><span>📚</span><b>Cybersecurity Awareness</b><small>The basics every student needs</small></a>
+        <a class="card feature" href="guide.html#passwords"><span>🔑</span><b>Password Security Guide</b><small>Strength checker and generator</small></a>
+        <a class="card feature" href="guide.html#threats"><span>⚠️</span><b>Common Cyber Threats</b><small>Phishing, malware and more</small></a>
+        <a class="card feature" href="guide.html#privacy"><span>🕶️</span><b>Online Privacy Tips</b><small>Your personal checklist</small></a>
+        <a class="card feature" href="play.html"><span>🎮</span><b>Cybersecurity Quiz Game</b><small>Timed, with streaks and ranks</small></a>
+        <a class="card feature" href="play.html#ranks"><span>🏆</span><b>Leaderboard</b><small>See the top 10 scores</small></a>
+      </div>
+
+      <div class="card tip-card">
+        <h3>💡 Cyber Tip of the Moment</h3>
+        <p id="cyberTip"></p>
+        <button id="newTip" class="btn ghost">Another tip</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    CYBERWISE &copy; 2026 | Cristal e-College - Computer Studies Department | ITEL 1 Final Exam
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

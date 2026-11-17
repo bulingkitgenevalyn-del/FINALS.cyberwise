@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--
+  CYBERWISE - Cybersecurity Awareness
+  Cristal e-College | ITEL 1 - Web Systems and Technologies | Final Examination
+  Page 3 of 4: PLAY (quiz game and leaderboard).
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Play - CYBERWISE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== HEADER / NAVIGATION ===== -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-icon">🛡️</span>
+      <div>
+        <h1>CYBERWISE</h1>
+        <small>Stay Smart. Stay Secure.</small>
+      </div>
+    </div>
+
+    <nav class="nav" aria-label="Main navigation">
+      <a class="nav-btn" href="index.html">🏠 Home</a>
+      <a class="nav-btn" href="guide.html">📚 Guide</a>
+      <a class="nav-btn active" href="play.html">🎮 Play</a>
+      <a class="nav-btn" href="about.html">ℹ️ About</a>
+    </nav>
+
+    <button id="soundToggle" class="icon-btn" title="Toggle sound">🔊</button>
+  </header>
+
+  <main>
+
+    <div class="subtabs" role="tablist" aria-label="Play sections">
+      <button class="filter active" data-tab="quiz" type="button">🎮 Quiz Game</button>
+      <button class="filter" data-tab="ranks" type="button">🏆 Ranks</button>
+    </div>
+
+    <section id="quiz" class="page active">
+      <div class="card quiz-card">
+
+        <!-- Start screen -->
+        <div id="quizStart" class="quiz-panel">
+          <h2>🎮 Cybersecurity Quiz Game</h2>
+          <p>10 random questions. 15 seconds each. Faster answers give more points. Build a streak for bonus points. You have 3 lives and one 50/50 lifeline.</p>
+          <p class="muted">Playing as: <b id="quizPlayer">Guest</b></p>
+          <button id="quizStartBtn" class="btn primary big">▶ Start Quiz</button>
+        </div>
+
+        <!-- Question screen -->
+        <div id="quizPlay" class="quiz-panel hidden">
+          <div class="hud">
+            <div>Question <b id="qNum">1</b>/10</div>
+            <div>⭐ <b id="qScore">0</b></div>
+            <div>🔥 Streak <b id="qStreak">0</b></div>
+            <div id="qLives" class="hearts">❤️❤️❤️</div>
+            <button id="qLifeline" class="btn ghost small" type="button">✂️ 50/50</button>
+          </div>
+
+          <div class="timer"><div id="timerBar" class="timer-bar"></div></div>
+          <p class="timer-text"><span id="timerText">15</span>s</p>
+
+          <p id="qCat" class="qcat"></p>
+          <h3 id="qText" class="qtext"></h3>
+          <div id="qOptions" class="q-options"></div>
+
+          <div id="qFeedback" class="feedback hidden"></div>
+          <button id="qNext" class="btn primary hidden" type="button">Next ▶</button>
+        </div>
+
+        <!-- Result screen -->
+        <div id="quizEnd" class="quiz-panel hidden">
+          <h2 id="endTitle">Quiz Complete</h2>
+          <div class="final" id="endScore">0</div>
+          <p id="endDetail"></p>
+          <p id="endRank"></p>
+          <div class="row center">
+            <button id="quizAgain" class="btn primary" type="button">🔁 Play Again</button>
+            <button id="goBoard" class="btn ghost" type="button">🏆 View Ranks</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="ranks" class="page">
+      <div class="card">
+        <h2>🏆 Leaderboard</h2>
+        <p>Top 10 quiz scores saved in this browser (localStorage).</p>
+        <table class="board">
+          <thead><tr><th>Rank</th><th>Player</th><th>Score</th><th>Correct</th><th>Date</th></tr></thead>
+          <tbody id="boardBody"></tbody>
+        </table>
+        <button id="resetBoard" class="btn danger" type="button">Reset Leaderboard</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    CYBERWISE &copy; 2026 | Cristal e-College - Computer Studies Department | ITEL 1 Final Exam
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
